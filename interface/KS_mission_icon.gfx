@@ -1,0 +1,6 @@
+spriteTypes = {
+    spriteType = {
+        name = "mission_potala_palace"
+        textureFile = "gfx//interface//missions//mission_potala_palace.dds"
+    }
+}

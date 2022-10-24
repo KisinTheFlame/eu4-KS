@@ -114,12 +114,12 @@ ks.ming.missions.far_east_affairs = {
     has_country_shield = yes
 
     ks.ming.mission.sweep_out_japanese_pirates = {
-        position = 1
+        position = 2
 
         icon = mission_japanese_samurai
 
         required_missions = {
-
+            ks.ming.mission.navy_of_ming
         }
 
         trigger = {
@@ -127,6 +127,13 @@ ks.ming.missions.far_east_affairs = {
                 any_country = {
                     has_reform = shogunate
                     OR = {
+                        AND = {
+                            alliance_with = root
+                            has_opinion = {
+                                who = root
+                                value = 150
+                            }
+                        }
                         AND = {
                             NOT = {
                                 has_truce = root
@@ -155,7 +162,7 @@ ks.ming.missions.far_east_affairs = {
     }
 
     ks.ming.mission.our_attitude_to_choson = {
-        position = 2
+        position = 3
 
         icon = mission_noble_council
 
@@ -213,12 +220,19 @@ ks.ming.missions.far_east_affairs = {
                         id = ks_ming_event_t.2
                     }
                 }
-                else = {
+                else_if = {
+                    limit = {
+                        is_rival = KOR
+                        trade_embargoing = KOR
+                    }
                     add_casus_belli = {
                         type = cb_vassalize_mission
                         target = KOR
                         months = 360
                     }
+                }
+                else = {
+                    custom_tooltip = ks.ming.mission.our_attitude_to_choson.effect.tooltip
                 }
             }
             else = {
@@ -261,13 +275,17 @@ ks.ming.missions.southeastern_asia_affairs_and_australia_colonization = {
                 name = ks.ming.modifier.renewed_navy
                 duration = 3650
             }
+            ordos_area = {
+                add_permanent_claim = root
+            }
+            
         }
     }
 
     ks.ming.mission.reopen_foreign_shipping_bureau = {
-        position = 2
+        position = 3
 
-        icon = mission_galleys_in_port
+        icon = mission_south_indian_trade
 
         required_missions = {
             ks.ming.mission.sweep_out_japanese_pirates
@@ -305,7 +323,7 @@ ks.ming.missions.southeastern_asia_affairs_and_australia_colonization = {
     }
 
     ks.ming.mission.reset_old_port_xuanwei_division = {
-        position = 3
+        position = 4
 
         icon = mission_dominate_home_trade_node
 
@@ -321,10 +339,10 @@ ks.ming.missions.southeastern_asia_affairs_and_australia_colonization = {
         }
     }
 
-    ks.ming.mission.continue_the_legend = {
-        position = 4
+    ks.ming.mission.continue_the_voyage = {
+        position = 5
 
-        icon = mission_domiate_home_trade_node
+        icon = mission_junk_boat
 
         required_missions = {
             ks.ming.mission.reset_old_port_xuanwei_division
@@ -353,12 +371,12 @@ ks.ming.missions.conquering_mongolia = {
     has_country_shield = yes
 
     ks.ming.mission.punish_oirat = {
-        position = 1
+        position = 2
 
         icon = mission_great_wall
 
         required_missions = {
-
+            ks.ming.mission.navy_of_ming
         }
 
         provinces_to_highlight = {
@@ -383,7 +401,7 @@ ks.ming.missions.conquering_mongolia = {
     }
 
     ks.ming.mission.capture_inner_mongolia = {
-        position = 2
+        position = 3
 
         icon = mission_chinese_general_riding
 
@@ -403,7 +421,7 @@ ks.ming.missions.conquering_mongolia = {
     }
 
     ks.ming.mission.tame_the_steppe = {
-        position = 3
+        position = 4
 
         icon = mission_kowtow
 
@@ -468,9 +486,40 @@ ks.ming.missions.control_tibet = {
         }
     }
 
-    # ks.ming.mision.snowy_holy_land = {
-    #     position = 2
+    ks.ming.mission.snowy_holy_land = {
+        position = 2
 
-    #     icon = 
-    # }
+        icon = mission_potala_palace
+
+        required_missions = {
+            ks.ming.mission.restrain_kang
+        }
+
+        trigger = {
+            
+        }
+
+        effect = {
+            
+        }
+    }
+
+    ks.ming.mission.all_created_things = {
+        position = 4
+
+        icon = mission_buddhist_monk_praying
+
+        required_missions = {
+            ks.ming.mission.capture_inner_mongolia
+            ks.ming.mission.snowy_holy_land
+        }
+
+        trigger = {
+            
+        }
+
+        effect = {
+
+        }
+    }
 }
