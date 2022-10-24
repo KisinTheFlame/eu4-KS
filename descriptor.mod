@@ -1,6 +1,6 @@
-version="1.34.4"
+version="0.1"
 tags={
 	"Alternative History"
 }
-name="KS"
+name="eu4-KS"
 supported_version="1.34.4"
