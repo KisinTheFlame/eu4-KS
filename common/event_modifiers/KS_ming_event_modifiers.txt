@@ -1,0 +1,16 @@
+ks.ming.modifier.swept_out_japanese_pirates = {
+    global_trade_power = 0.1
+}
+
+ks.ming.modifier.renewed_navy = {
+    naval_maintenance_modifier = -0.1
+    heavy_ship_power = 0.1
+}
+
+ks.ming.modifier.foreign_shipping_bureau = {
+    range = 0.2
+}
+
+ks.ming.modifier.tight_kang_policy = {
+    diplomatic_annexation_cost = -0.2
+}

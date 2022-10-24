@@ -1,0 +1,27 @@
+l_english:
+  # ks.ming.missions.manchu_affairs
+  ks.ming.mission.consolidate_jianzhou_title: "巩固建州三卫"
+  ks.ming.mission.consolidate_jianzhou_desc: ""
+  ks.ming.mission.consolidate_jianzhou.effect.tooltip: "任务完成时，如果满足了第一个条件，将这些国家变为你的附庸国。否则，你获得所有满洲地区内女真文化省份的永久性宣称。"
+  # ks.ming.missions.far_east_affairs
+  ks.ming.mission.sweep_out_japanese_pirates_title: "整治倭患"
+  ks.ming.mission.sweep_out_japanese_pirates_desc: ""
+  ks.ming.mission.our_attitude_to_choson_title: "对朝方针"
+  ks.ming.mission.our_attitude_to_choson_desc: ""
+  # ks.ming.missions.southeastern_asia_affairs_and_australia_colonization
+  ks.ming.mission.navy_of_ming_title: "大明水师"
+  ks.ming.mission.navy_of_ming_desc: ""
+  ks.ming.mission.reopen_foreign_shipping_bureau_title: "重开市舶司"
+  ks.ming.mission.reopen_foreign_shipping_bureau_desc: ""
+  ks.ming.mission.reset_old_port_xuanwei_division_title: "重建旧港宣慰司"
+  ks.ming.mission.reset_old_port_xuanwei_division_desc: ""
+  # ks.ming.missions.conquering_mongolia
+  ks.ming.mission.punish_oirat_title: "保护河套"
+  ks.ming.mission.punish_oirat_desc: ""
+  ks.ming.mission.capture_inner_mongolia_title: "夺取内蒙古"
+  ks.ming.mission.capture_inner_mongolia_desc: ""
+  ks.ming.mission.tame_the_steppe_title: "驯服草原"
+  ks.ming.mission.tame_the_steppe_desc: ""
+  # ks.ming.missions.control_tibet
+  ks.ming.mission.restrain_kang_title: "羁縻康藏"
+  ks.ming.mission.restrain_kang_desc: ""

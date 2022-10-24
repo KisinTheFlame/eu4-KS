@@ -1,0 +1,5 @@
+l_english:
+  ks_ming_event_r.fengtian_jingnan.title: "奉天靖难"
+  ks_ming_event_r.fengtian_jingnan.description: "建文元年七月初五，燕王朱棣援引《皇明祖训》，以为国靖难的名义，反叛侄子建文帝朱允炆。这场内战持续近三年。最后，朱棣于建文四年六月十三攻下帝都应天府，六月十七即登基为永乐皇帝。"
+  ks_ming_event_r.fengtian_jingnan.option.new_ruler: "我们要恭迎这位继承大统的皇帝。"
+  ks_ming_event_r.fengtian_jingnan.option.against_pretender: "大胆！"
