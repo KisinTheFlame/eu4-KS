@@ -1,0 +1,9 @@
+is_pleasing_subject_of = {
+    $subject$ = {
+        is_subject_of = $master$
+        has_opinion = {
+            who = $master$
+            value = 150
+        }
+    }
+}

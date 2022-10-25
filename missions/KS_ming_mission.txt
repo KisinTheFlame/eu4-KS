@@ -16,7 +16,7 @@ ks.ming.missions.manchu_affairs = {
         icon = mission_non-western_cavalry_raid
 
         required_missions = {
-
+            
         }
 
         trigger = {
@@ -99,6 +99,24 @@ ks.ming.missions.manchu_affairs = {
             }
         }
     }
+
+    ks.ming.mission.nurgan_regional_military_commission = {
+        position = 2
+
+        icon = mission_manchu_warrior
+
+        required_missions = {
+            ks.ming.mission.consolidate_jianzhou
+        }
+
+        trigger = {
+            
+        }
+
+        effect = {
+            
+        }
+    }
 }
 
 ks.ming.missions.far_east_affairs = {
@@ -176,12 +194,9 @@ ks.ming.missions.far_east_affairs = {
                     exists = KOR
                 }
                 OR = {
-                    KOR = {
-                        is_subject_of = root
-                        has_opinion = {
-                            who = root
-                            value = 150
-                        }
+                    is_pleasing_subject_of = {
+                        subject = KOR
+                        master = root
                     }
                     AND = {
                         is_rival = KOR
@@ -278,7 +293,9 @@ ks.ming.missions.southeastern_asia_affairs_and_australia_colonization = {
             ordos_area = {
                 add_permanent_claim = root
             }
-            
+            northern_kyushu = {
+                add_permanent_claim = root
+            }
         }
     }
 
@@ -349,11 +366,11 @@ ks.ming.missions.southeastern_asia_affairs_and_australia_colonization = {
         }
 
         trigger = {
-            
+        
         }
 
         effect = {
-            
+        
         }
     }
 }
@@ -409,6 +426,13 @@ ks.ming.missions.conquering_mongolia = {
             ks.ming.mission.punish_oirat
         }
 
+        provinces_to_highlight = {
+            area = inner_mongolia_area
+            NOT = {
+                country_or_non_sovereign_subject_holds = root
+            }
+        }
+
         trigger = {
             inner_mongolia_area = {
                 country_or_non_sovereign_subject_holds = root
@@ -416,7 +440,7 @@ ks.ming.missions.conquering_mongolia = {
         }
 
         effect = {
-            
+        
         }
     }
 
@@ -430,11 +454,11 @@ ks.ming.missions.conquering_mongolia = {
         }
 
         trigger = {
-            
+        
         }
 
         effect = {
-            
+        
         }
     }
 }
@@ -496,11 +520,11 @@ ks.ming.missions.control_tibet = {
         }
 
         trigger = {
-            
+        
         }
 
         effect = {
-            
+        
         }
     }
 
@@ -513,9 +537,9 @@ ks.ming.missions.control_tibet = {
             ks.ming.mission.capture_inner_mongolia
             ks.ming.mission.snowy_holy_land
         }
-
+        
         trigger = {
-            
+        
         }
 
         effect = {
