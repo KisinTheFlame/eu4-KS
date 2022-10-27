@@ -1,0 +1,81 @@
+tusi = {
+    copy_from = default
+    sprite = GFX_icon_vassal
+
+    has_overlords_ruler = yes
+    can_fight_independence_war = no
+    is_voluntary = no
+    transfer_trade_power = yes
+    transfer_trade_if_merchant_republic = yes
+    joins_overlords_wars = yes
+    joins_colonial_wars = no
+    can_be_integrated = no
+    can_release_and_play = no
+    uses_tariffs = no
+    eats_overlords_colonies = no
+    overlord_can_attack = no
+    overlord_can_be_subject = no
+    can_have_subjects_of_other_types = no
+    can_be_annexed = no
+    takes_diplo_slot = no
+    has_power_projection = yes
+    can_release_in_peace = no
+    uses_military_focus = yes
+    counts_for_borders = yes
+    can_use_claims = yes
+    gets_help_with_rebels = yes
+    share_rebel_popup = yes
+    separatists_become_subjects = no
+    can_transfer_in_peace = no
+    can_set_mil_focus = yes
+    can_send_missionary_to_subject = yes
+    can_union_break = no
+    overlord_can_fabricate_for = yes
+    max_government_rank = 2
+    base_liberty_desire = -100
+    liberty_desire_negative_prestige = 0
+    liberty_desire_development_ratio = 0
+    liberty_desire_same_dynasty = 0
+    pays_overlord = 1.0
+    forcelimit_to_overlord = 0.1
+    military_focus = 1.0
+    relative_power_class = 1
+    diplomacy_view_class = 1
+    
+    can_fight = {
+
+    }
+
+    can_rival = {
+        
+    }
+
+    can_ally = {
+        
+    }
+
+    can_marry = {
+        
+    }
+
+    embargo_rivals = yes
+    support_loyalists = no
+    subsidize_armies = yes
+    scutage = no
+    send_officers = yes
+    divert_trade = yes
+    placate_rulers = no
+    place_relative_on_throne = no
+    enforce_religion = yes
+    customize_subject = no
+    replace_governor = no
+    grant_province = yes
+    enforce_culture = no
+    siphon_income = no
+    fortify_march = no
+    seize_territory = yes
+    start_colonial_war = no
+    grant_core_claim = yes
+    takeondebt = yes
+    bestow_gifts = yes
+}

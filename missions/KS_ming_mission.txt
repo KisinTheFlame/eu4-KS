@@ -110,11 +110,24 @@ ks.ming.missions.manchu_affairs = {
         }
 
         trigger = {
-            
+            jilin_area = {
+                type = all
+                owned_by = root
+            }
+            ningguta_area = {
+                type = all
+                owned_by = root
+            }
+            furdan_area = {
+                type = all
+                owned_by = root
+            }
         }
 
         effect = {
-            
+            country_event = {
+                id = ks_ming_event_t.6
+            }
         }
     }
 }

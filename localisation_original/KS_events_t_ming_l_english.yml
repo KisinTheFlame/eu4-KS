@@ -1,5 +1,5 @@
 l_english:
-  ks_ming_event_t.kang_problem.title: "康藏问题"
+  ks_ming_event_t.kang_problem.title: "大臣上书：康藏问题"
   ks_ming_event_t.kang_problem.description: ""
   ks_ming_event_t.kang_problem.option.tight: "我们要严格地管控他们。"
   ks_ming_event_t.kang_problem.option.loose: "向他们宣扬大明的国威就行了。"
@@ -17,3 +17,7 @@ l_english:
   ks_ming_event_t.refused_vassal.title: "冥顽不灵的[From.GetName]"
   ks_ming_event_t.refused_vassal.description: ""
   ks_ming_event_t.refused_vassal.option.ok: "已阅。"
+  ks_ming_event_t.rebuild_nurgan_commission.title: "大臣上书：重建奴儿干都司"
+  ks_ming_event_t.rebuild_nurgan_commission.description: ""
+  ks_ming_event_t.rebuild_nurgan_commission.option.rebuild: ""
+  ks_ming_event_t.rebuild_nurgan_commission.option.direct_control: ""

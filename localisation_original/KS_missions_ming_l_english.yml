@@ -3,6 +3,8 @@ l_english:
   ks.ming.mission.consolidate_jianzhou_title: "巩固建州三卫"
   ks.ming.mission.consolidate_jianzhou_desc: ""
   ks.ming.mission.consolidate_jianzhou.effect.tooltip: "这个任务的奖励取决于完成任务的方式。\n\n任务完成时，如果满足了第一个条件，将这些国家变为你的附庸国。\n\n否则，你获得所有满洲地区内女真文化省份的永久性宣称。"
+  ks.ming.mission.nurgan_regional_military_commission_title: "奴儿干都司"
+  ks.ming.mission.nurgan_regional_military_commission_desc: ""
   # ks.ming.missions.far_east_affairs
   ks.ming.mission.sweep_out_japanese_pirates_title: "整治倭患"
   ks.ming.mission.sweep_out_japanese_pirates_desc: ""

@@ -200,3 +200,28 @@ country_event = {
         }
     }
 }
+
+# Rebuild the Nurgan Regional Military Commission
+country_event = {
+    id = ks_ming_event_t.6
+    title = ks_ming_event_t.rebuild_nurgan_commission.title
+    desc = ks_ming_event_t.rebuild_nurgan_commission.description
+
+    is_triggered_only = yes
+
+    option = {
+        name = ks_ming_event_t.rebuild_nurgan_commission.option.rebuild
+        manchuria_region = {
+            limit = {
+                NOT = {
+                    region = liaoning_area
+                }
+            }
+            
+        }
+    }
+
+    option = {
+        name = ks_ming_event_t.rebuild_nurgan_commission.option.direct_control
+    }
+}
