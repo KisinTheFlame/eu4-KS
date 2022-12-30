@@ -1,562 +1,486 @@
 ks.ming.missions.manchu_affairs = {
-    slot = 1
-    generic = no
-    ai = yes
-    potential = {
-        OR = {
-            tag = MNG
-            was_tag = MNG
-        }
-    }
-    has_country_shield = yes
-
-    ks.ming.mission.consolidate_jianzhou = {
-        position = 1
-
-        icon = mission_non-western_cavalry_raid
-
-        required_missions = {
-            
-        }
-
-        trigger = {
-            OR = {
-                calc_true_if = {
-                    all_subject_country = {
-                        OR = {
-                            dominant_culture = manchu
-                            dominant_culture = manchu_new
-                        }
-                        is_vassal = no
-                        has_opinion = {
-                            who = root
-                            value = 150
-                        }
-                    }
-                    amount = 2
-                }
-                AND = {
-                    jilin_area = {
-                        type = all
-                        country_or_non_sovereign_subject_holds = root
-                    }
-                    ningguta_area = {
-                        type = all
-                        country_or_non_sovereign_subject_holds = root
-                    }
-                }
-            }
-        }
-
-        effect = {
-            custom_tooltip = ks.ming.mission.consolidate_jianzhou.effect.tooltip
-            hidden_effect = {
-                if = {
-                    limit = {
-                        calc_true_if = {
-                            all_subject_country = {
-                                OR = {
-                                    dominant_culture = manchu
-                                    dominant_culture = manchu_new
-                                }
-                                has_opinion = {
-                                    who = root
-                                    value = 150
-                                }
-                            }
-                            amount = 2
-                        }
-                    }
-                    every_subject_country = {
-                        limit = {
-                            OR = {
-                                dominant_culture = manchu
-                                dominant_culture = manchu_new
-                            }
-                            is_vassal = no
-                            has_opinion = {
-                                who = root
-                                value = 150
-                            }
-                        }
-                        root = {
-                            vassalize = prev
-                        }
-                    }
-                }
-                else = {
-                    every_province = {
-                        limit = {
-                            region = manchuria_region
-                            OR = {
-                                culture = manchu
-                                culture = manchu_new
-                            }
-                        }
-                        add_permanent_claim = root
-                    }
-                }
-            }
-        }
-    }
-
-    ks.ming.mission.nurgan_regional_military_commission = {
-        position = 2
-
-        icon = mission_manchu_warrior
-
-        required_missions = {
-            ks.ming.mission.consolidate_jianzhou
-        }
-
-        trigger = {
-            jilin_area = {
-                type = all
-                owned_by = root
-            }
-            ningguta_area = {
-                type = all
-                owned_by = root
-            }
-            furdan_area = {
-                type = all
-                owned_by = root
-            }
-        }
-
-        effect = {
-            country_event = {
-                id = ks_ming_event_t.6
-            }
-        }
-    }
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = MNG
+			was_tag = MNG
+		}
+	}
+	has_country_shield = yes
+	ks.ming.mission.consolidate_jianzhou = {
+		position = 1
+		icon = mission_non-western_cavalry_raid
+		required_missions = {
+		}
+		trigger = {
+			OR = {
+				calc_true_if = {
+					all_subject_country = {
+						OR = {
+							dominant_culture = manchu
+							dominant_culture = manchu_new
+						}
+						is_vassal = no
+						has_opinion = {
+							who = root
+							value = 150
+						}
+					}
+					amount = 2
+				}
+				AND = {
+					jilin_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+					ningguta_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = ks.ming.mission.consolidate_jianzhou.effect.tooltip
+			hidden_effect = {
+				if = {
+					limit = {
+						calc_true_if = {
+							all_subject_country = {
+								OR = {
+									dominant_culture = manchu
+									dominant_culture = manchu_new
+								}
+								has_opinion = {
+									who = root
+									value = 150
+								}
+							}
+							amount = 2
+						}
+					}
+					every_subject_country = {
+						limit = {
+							OR = {
+								dominant_culture = manchu
+								dominant_culture = manchu_new
+							}
+							is_vassal = no
+							has_opinion = {
+								who = root
+								value = 150
+							}
+						}
+						root = {
+							vassalize = prev
+						}
+					}
+				}
+				else = {
+					every_province = {
+						limit = {
+							region = manchuria_region
+							OR = {
+								culture = manchu
+								culture = manchu_new
+							}
+						}
+						add_permanent_claim = root
+					}
+				}
+			}
+		}
+	}
+	ks.ming.mission.nurgan_regional_military_commission = {
+		position = 2
+		icon = mission_manchu_warrior
+		required_missions = {
+			ks.ming.mission.consolidate_jianzhou
+		}
+		trigger = {
+			jilin_area = {
+				type = all
+				owned_by = root
+			}
+			ningguta_area = {
+				type = all
+				owned_by = root
+			}
+			furdan_area = {
+				type = all
+				owned_by = root
+			}
+		}
+		effect = {
+			country_event = {
+				id = ks_ming_event_t.6
+			}
+		}
+	}
 }
 
 ks.ming.missions.far_east_affairs = {
-    slot = 2
-    generic = no
-    ai = yes
-    potential = {
-        OR = {
-            tag = MNG
-            was_tag = MNG
-        }
-    }
-    has_country_shield = yes
-
-    ks.ming.mission.sweep_out_japanese_pirates = {
-        position = 2
-
-        icon = mission_japanese_samurai
-
-        required_missions = {
-            ks.ming.mission.navy_of_ming
-        }
-
-        trigger = {
-            OR = {
-                any_country = {
-                    has_reform = shogunate
-                    OR = {
-                        AND = {
-                            alliance_with = root
-                            has_opinion = {
-                                who = root
-                                value = 150
-                            }
-                        }
-                        AND = {
-                            NOT = {
-                                has_truce = root
-                            }
-                            japan_region = {
-                                country_or_non_sovereign_subject_holds = root
-                            }
-                        }
-                        is_subject_of = root
-                    }
-                }
-                all_country = {
-                    NOT = {
-                        has_reform = shogunate
-                    }
-                }
-            }
-        }
-
-        effect = {
-            add_country_modifier = {
-                name = ks.ming.modifier.swept_out_japanese_pirates
-                duration = 3650
-            }
-        }
-    }
-
-    ks.ming.mission.our_attitude_to_choson = {
-        position = 3
-
-        icon = mission_noble_council
-
-        required_missions = {
-            ks.ming.mission.sweep_out_japanese_pirates
-        }
-
-        trigger = {
-            if = {
-                limit = {
-                    exists = KOR
-                }
-                OR = {
-                    is_pleasing_subject_of = {
-                        subject = KOR
-                        master = root
-                    }
-                    AND = {
-                        is_rival = KOR
-                        trade_embargoing = KOR
-                    }
-                }
-            }
-            else = {
-                pyongan_area = {
-                    type = all
-                    country_or_non_sovereign_subject_holds = root
-                }
-                western_korea_area = {
-                    type = all
-                    country_or_non_sovereign_subject_holds = root
-                }
-            }
-        }
-
-        effect = {
-            if = {
-                limit = {
-                    exists = KOR
-                }
-                if = {
-                    limit = {
-                        KOR = {
-                            is_subject_of = root
-                            has_opinion = {
-                                who = root
-                                value = 150
-                            }
-                        }
-                    }
-                    country_event = {
-                        id = ks_ming_event_t.2
-                    }
-                }
-                else_if = {
-                    limit = {
-                        is_rival = KOR
-                        trade_embargoing = KOR
-                    }
-                    add_casus_belli = {
-                        type = cb_vassalize_mission
-                        target = KOR
-                        months = 360
-                    }
-                }
-                else = {
-                    custom_tooltip = ks.ming.mission.our_attitude_to_choson.effect.tooltip
-                }
-            }
-            else = {
-                korea_region = {
-                    add_permanent_claim = root
-                }
-            }
-        }
-    }
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = MNG
+			was_tag = MNG
+		}
+	}
+	has_country_shield = yes
+	ks.ming.mission.sweep_out_japanese_pirates = {
+		position = 2
+		icon = mission_japanese_samurai
+		required_missions = {
+			ks.ming.mission.navy_of_ming
+		}
+		trigger = {
+			OR = {
+				any_country = {
+					has_reform = shogunate
+					OR = {
+						AND = {
+							alliance_with = root
+							has_opinion = {
+								who = root
+								value = 150
+							}
+						}
+						AND = {
+							NOT = {
+								truce_with = root
+							}
+							japan_region = {
+								country_or_non_sovereign_subject_holds = root
+							}
+						}
+						is_subject_of = root
+					}
+				}
+				all_country = {
+					NOT = {
+						has_reform = shogunate
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = ks.ming.modifier.swept_out_japanese_pirates
+				duration = 3650
+			}
+		}
+	}
+	ks.ming.mission.our_attitude_to_choson = {
+		position = 3
+		icon = mission_noble_council
+		required_missions = {
+			ks.ming.mission.sweep_out_japanese_pirates
+		}
+		trigger = {
+			if = {
+				limit = {
+					exists = KOR
+				}
+				OR = {
+					is_pleasing_subject_of = {
+						subject = KOR
+						master = root
+					}
+					AND = {
+						is_rival = KOR
+						trade_embargoing = KOR
+					}
+				}
+			}
+			else = {
+				pyongan_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+				western_korea_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = root
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = KOR
+				}
+				if = {
+					limit = {
+						KOR = {
+							is_subject_of = root
+							has_opinion = {
+								who = root
+								value = 150
+							}
+						}
+					}
+					country_event = {
+						id = ks_ming_event_t.2
+					}
+				}
+				else_if = {
+					limit = {
+						is_rival = KOR
+						trade_embargoing = KOR
+					}
+					add_casus_belli = {
+						type = cb_vassalize_mission
+						target = KOR
+						months = 360
+					}
+				}
+				else = {
+					custom_tooltip = ks.ming.mission.our_attitude_to_choson.effect.tooltip
+				}
+			}
+			else = {
+				korea_region = {
+					add_permanent_claim = root
+				}
+			}
+		}
+	}
 }
 
 ks.ming.missions.southeastern_asia_affairs_and_australia_colonization = {
-    slot = 3
-    generic = no
-    ai = yes
-    potential = {
-        OR = {
-            tag = MNG
-            was_tag = MNG
-        }
-    }
-    has_country_shield = yes
-
-    ks.ming.mission.navy_of_ming = {
-        position = 1
-
-        icon = mission_establish_high_seas_navy
-
-        required_missions = {
-
-        }
-
-        trigger = {
-            num_of_heavy_ship = 3
-            navy_size_percentage = 1
-        }
-
-        effect = {
-            add_country_modifier = {
-                name = ks.ming.modifier.renewed_navy
-                duration = 3650
-            }
-            ordos_area = {
-                add_permanent_claim = root
-            }
-            northern_kyushu = {
-                add_permanent_claim = root
-            }
-        }
-    }
-
-    ks.ming.mission.reopen_foreign_shipping_bureau = {
-        position = 3
-
-        icon = mission_south_indian_trade
-
-        required_missions = {
-            ks.ming.mission.sweep_out_japanese_pirates
-            ks.ming.mission.navy_of_ming
-            ks.ming.mission.punish_oirat
-        }
-
-        trigger = {
-            667 = { # Guangzhou
-                num_of_times_improved = 3
-            }
-            669 = { # Quanzhou
-                num_of_times_improved = 3
-            }
-            2149 = { # Ningbo
-                num_of_times_improved = 3
-            }
-            4942 = { # Dinghai
-                num_of_times_improved = 3
-            }
-        }
-
-        effect = {
-            4942 = { # Dinghai
-                center_of_trade = 1
-            }
-            622 = { # Palembang
-                add_permanent_claim = root
-            }
-            add_country_modifier = {
-                name = ks.ming.modifier.foreign_shipping_bureau
-                duration = 7300
-            }
-        }
-    }
-
-    ks.ming.mission.reset_old_port_xuanwei_division = {
-        position = 4
-
-        icon = mission_dominate_home_trade_node
-
-        required_missions = {
-            ks.ming.mission.reopen_foreign_shipping_bureau
-        }
-
-        trigger = {
-            owns_core_province = 622 # Palembang
-        }
-
-        effect = {
-        }
-    }
-
-    ks.ming.mission.continue_the_voyage = {
-        position = 5
-
-        icon = mission_junk_boat
-
-        required_missions = {
-            ks.ming.mission.reset_old_port_xuanwei_division
-        }
-
-        trigger = {
-        
-        }
-
-        effect = {
-        
-        }
-    }
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = MNG
+			was_tag = MNG
+		}
+	}
+	has_country_shield = yes
+	ks.ming.mission.navy_of_ming = {
+		position = 1
+		icon = mission_establish_high_seas_navy
+		required_missions = {
+		}
+		trigger = {
+			num_of_heavy_ship = 3
+			navy_size_percentage = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = ks.ming.modifier.renewed_navy
+				duration = 3650
+			}
+			ordos_area = {
+				add_permanent_claim = root
+			}
+			northern_kyushu = {
+				add_permanent_claim = root
+			}
+		}
+	}
+	ks.ming.mission.reopen_foreign_shipping_bureau = {
+		position = 3
+		icon = mission_south_indian_trade
+		required_missions = {
+			ks.ming.mission.sweep_out_japanese_pirates
+			ks.ming.mission.navy_of_ming
+			ks.ming.mission.punish_oirat
+		}
+		trigger = {
+			667 = {
+				# Guangzhou
+				num_of_times_improved = 3
+			}
+			669 = {
+				# Quanzhou
+				num_of_times_improved = 3
+			}
+			2149 = {
+				# Ningbo
+				num_of_times_improved = 3
+			}
+			4942 = {
+				# Dinghai
+				num_of_times_improved = 3
+			}
+		}
+		effect = {
+			4942 = {
+				# Dinghai
+				center_of_trade = 1
+			}
+			622 = {
+				# Palembang
+				add_permanent_claim = root
+			}
+			add_country_modifier = {
+				name = ks.ming.modifier.foreign_shipping_bureau
+				duration = 7300
+			}
+		}
+	}
+	ks.ming.mission.reset_old_port_xuanwei_division = {
+		position = 4
+		icon = mission_dominate_home_trade_node
+		required_missions = {
+			ks.ming.mission.reopen_foreign_shipping_bureau
+		}
+		trigger = {
+			owns_core_province = 622			# Palembang
+		}
+		effect = {
+		}
+	}
+	ks.ming.mission.continue_the_voyage = {
+		position = 5
+		icon = mission_junk_boat
+		required_missions = {
+			ks.ming.mission.reset_old_port_xuanwei_division
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
 }
 
 ks.ming.missions.conquering_mongolia = {
-    slot = 4
-    generic = no
-    ai = yes
-    potential = {
-        OR = {
-            tag = MNG
-            was_tag = MNG
-        }
-    }
-    has_country_shield = yes
-
-    ks.ming.mission.punish_oirat = {
-        position = 2
-
-        icon = mission_great_wall
-
-        required_missions = {
-            ks.ming.mission.navy_of_ming
-        }
-
-        provinces_to_highlight = {
-            area = ordos_area
-            NOT = {
-                country_or_non_sovereign_subject_holds = root
-            }
-        }
-
-        trigger = {
-            ordos_area = {
-                type = all
-                country_or_non_sovereign_subject_holds = root
-            }
-        }
-
-        effect = {
-            inner_mongolia_area = {
-                add_permanent_claim = root
-            }
-        }
-    }
-
-    ks.ming.mission.capture_inner_mongolia = {
-        position = 3
-
-        icon = mission_chinese_general_riding
-
-        required_missions = {
-            ks.ming.mission.punish_oirat
-        }
-
-        provinces_to_highlight = {
-            area = inner_mongolia_area
-            NOT = {
-                country_or_non_sovereign_subject_holds = root
-            }
-        }
-
-        trigger = {
-            inner_mongolia_area = {
-                country_or_non_sovereign_subject_holds = root
-            }
-        }
-
-        effect = {
-        
-        }
-    }
-
-    ks.ming.mission.tame_the_steppe = {
-        position = 4
-
-        icon = mission_kowtow
-
-        required_missions = {
-            ks.ming.mission.capture_inner_mongolia
-        }
-
-        trigger = {
-        
-        }
-
-        effect = {
-        
-        }
-    }
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = MNG
+			was_tag = MNG
+		}
+	}
+	has_country_shield = yes
+	ks.ming.mission.punish_oirat = {
+		position = 2
+		icon = mission_great_wall
+		required_missions = {
+			ks.ming.mission.navy_of_ming
+		}
+		provinces_to_highlight = {
+			area = ordos_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		trigger = {
+			ordos_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			inner_mongolia_area = {
+				add_permanent_claim = root
+			}
+		}
+	}
+	ks.ming.mission.capture_inner_mongolia = {
+		position = 3
+		icon = mission_chinese_general_riding
+		required_missions = {
+			ks.ming.mission.punish_oirat
+		}
+		provinces_to_highlight = {
+			area = inner_mongolia_area
+			NOT = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		trigger = {
+			inner_mongolia_area = {
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+		}
+	}
+	ks.ming.mission.tame_the_steppe = {
+		position = 4
+		icon = mission_kowtow
+		required_missions = {
+			ks.ming.mission.capture_inner_mongolia
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
 }
 
 ks.ming.missions.control_tibet = {
-    slot = 5
-    generic = no
-    ai = yes
-    potential = {
-        OR = {
-            tag = MNG
-            was_tag = MNG
-        }
-    }
-    has_country_shield = yes
-
-    ks.ming.mission.restrain_kang = {
-        position = 1
-
-        icon = mission_market_place_with_asian_traders
-
-        trigger = {
-            OR = {
-                AND = {
-                    kham_area = {
-                        type = all
-                        country_or_non_sovereign_subject_holds = root
-                    }
-                    NOT = {
-                        exists = KAM
-                    }
-                }
-                AND = {
-                    KAM = {
-                        is_subject_of = MNG
-                        has_opinion = {
-                            who = root
-                            value = 150
-                        }
-                    }
-                }
-            }
-        }
-
-        effect = {
-            country_event = {
-                id = ks_ming_event_t.1 # Kang problem
-            }
-        }
-    }
-
-    ks.ming.mission.snowy_holy_land = {
-        position = 2
-
-        icon = mission_potala_palace
-
-        required_missions = {
-            ks.ming.mission.restrain_kang
-        }
-
-        trigger = {
-        
-        }
-
-        effect = {
-        
-        }
-    }
-
-    ks.ming.mission.all_created_things = {
-        position = 4
-
-        icon = mission_buddhist_monk_praying
-
-        required_missions = {
-            ks.ming.mission.capture_inner_mongolia
-            ks.ming.mission.snowy_holy_land
-        }
-        
-        trigger = {
-        
-        }
-
-        effect = {
-
-        }
-    }
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = MNG
+			was_tag = MNG
+		}
+	}
+	has_country_shield = yes
+	ks.ming.mission.restrain_kang = {
+		position = 1
+		icon = mission_market_place_with_asian_traders
+		trigger = {
+			OR = {
+				AND = {
+					kham_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = root
+					}
+					NOT = {
+						exists = KAM
+					}
+				}
+				AND = {
+					KAM = {
+						is_subject_of = MNG
+						has_opinion = {
+							who = root
+							value = 150
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = ks_ming_event_t.1				# Kang problem
+			}
+		}
+	}
+	ks.ming.mission.snowy_holy_land = {
+		position = 2
+		icon = mission_potala_palace
+		required_missions = {
+			ks.ming.mission.restrain_kang
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
+	ks.ming.mission.all_created_things = {
+		position = 4
+		icon = mission_buddhist_monk_praying
+		required_missions = {
+			ks.ming.mission.capture_inner_mongolia
+			ks.ming.mission.snowy_holy_land
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
 }

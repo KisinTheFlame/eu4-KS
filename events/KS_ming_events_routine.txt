@@ -1,110 +1,103 @@
 namespace = ks_ming_event_r
-
 # Fengtian Jingnan
 country_event = {
-    id = ks_ming_event_r.1
-
-    title = ks_ming_event_r.fengtian_jingnan.title
-    desc = ks_ming_event_r.fengtian_jingnan.description
-
-    trigger = {
-        tag = MNG
-        NOT = {
-            has_ruler_flag = ks_flag_experienced_fengtian_jingnan
-        }
-        OR = {
-            AND = {
-                NOT = {
-                    adm = 3
-                }
-                NOT = {
-                    dip = 2
-                }
-                NOT = {
-                    mil = 2
-                }
-            }
-            AND = {
-                NOT = {
-                    adm = 2
-                }
-                NOT = {
-                    dip = 3
-                }
-                NOT = {
-                    mil = 2
-                }
-            }
-            AND = {
-                NOT = {
-                    adm = 2
-                }
-                NOT = {
-                    dip = 2
-                }
-                NOT = {
-                    mil = 3
-                }
-            }
-        }
-    }
-
-    mean_time_to_happen = {
-        months = 12
-    }
-
-    immediate = {
-        set_ruler_flag = ks_flag_experienced_fengtian_jingnan
-    }
-
-    option = {
-        name = ks_ming_event_r.fengtian_jingnan.option.new_ruler
-        add_stability = -1
-        define_ruler = {
-            dynasty = original_dynasty
-            min_age = 20
-            max_age = 35
-            claim = 95
-            max_random_adm = 6
-            max_random_dip = 6
-            max_random_mil = 6
-            change_adm = 1
-            change_dip = 1
-            change_mil = 1
-            male = yes
-        }
-        hidden_effect = {
-            kill_heir = {
-                allow_new_heir = yes
-            }
-        }
-        capital_scope = {
-            spawn_rebels = {
-                type = pretender_rebels
-                size = 2
-            }
-        }
-        random_owned_province = {
-            limit = {
-                is_island = no
-            }
-            spawn_rebels = {
-                type = pretender_rebels
-                size = 2
-            }
-        }
-    }
-
-    option = {
-        name = ks_ming_event_r.fengtian_jingnan.option.against_pretender
-        random_owned_province = {
-            limit = {
-                is_island = no
-            }
-            spawn_rebels = {
-                type = pretender_rebels
-                size = 2
-            }
-        }
-    }
+	id = ks_ming_event_r.1
+	title = ks_ming_event_r.fengtian_jingnan.title
+	desc = ks_ming_event_r.fengtian_jingnan.description
+	trigger = {
+		tag = MNG
+		NOT = {
+			has_ruler_flag = ks_flag_experienced_fengtian_jingnan
+		}
+		OR = {
+			AND = {
+				NOT = {
+					adm = 3
+				}
+				NOT = {
+					dip = 2
+				}
+				NOT = {
+					mil = 2
+				}
+			}
+			AND = {
+				NOT = {
+					adm = 2
+				}
+				NOT = {
+					dip = 3
+				}
+				NOT = {
+					mil = 2
+				}
+			}
+			AND = {
+				NOT = {
+					adm = 2
+				}
+				NOT = {
+					dip = 2
+				}
+				NOT = {
+					mil = 3
+				}
+			}
+		}
+	}
+	mean_time_to_happen = {
+		months = 12
+	}
+	immediate = {
+		set_ruler_flag = ks_flag_experienced_fengtian_jingnan
+	}
+	option = {
+		name = ks_ming_event_r.fengtian_jingnan.option.new_ruler
+		add_stability = -1
+		define_ruler = {
+			dynasty = original_dynasty
+			min_age = 20
+			max_age = 35
+			claim = 95
+			max_random_adm = 6
+			max_random_dip = 6
+			max_random_mil = 6
+			change_adm = 1
+			change_dip = 1
+			change_mil = 1
+			male = yes
+		}
+		hidden_effect = {
+			kill_heir = {
+				allow_new_heir = yes
+			}
+		}
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 2
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_island = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 2
+			}
+		}
+	}
+	option = {
+		name = ks_ming_event_r.fengtian_jingnan.option.against_pretender
+		random_owned_province = {
+			limit = {
+				is_island = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 2
+			}
+		}
+	}
 }

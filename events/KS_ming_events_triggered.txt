@@ -1,227 +1,199 @@
 namespace = ks_ming_event_t
-
 # Kang problem
 country_event = {
-    id = ks_ming_event_t.1
-    title = ks_ming_event_t.kang_problem.title
-    desc = ks_ming_event_t.kang_problem.description
-
-    is_triggered_only = yes
-    
-    option = {
-        name = ks_ming_event_t.kang_problem.option.tight
-
-        set_country_flag = tight_kang_policy
-        if = {
-            limit = {
-                exists = KAM
-                KAM = {
-                    is_subject_of = root
-                }
-                NOT = {
-                    KAM = {
-                        OR = {
-                            vassal_of = root
-                            march_of = root
-                        }
-                    }
-                }
-            }
-            vassalize = KAM
-        }
-        else_if = {
-            limit = {
-                KAM = {
-                    OR = {
-                        vassal_of = root
-                        march_of = root
-                    }
-                }
-            }
-            KAM = {
-                add_liberty_desire = 15
-            }
-            add_country_modifier = {
-                name = ks.ming.modifier.tight_kang_policy
-                duration = 7300
-            }
-        }
-        else = {
-            kham_area = {
-                add_base_tax = 1
-            }
-        }
-    }
-
-    option = {
-        name = ks_ming_event_t.kang_problem.option.loose
-
-        set_country_flag = loose_kang_policy
-        if = {
-            limit = {
-                exists = KAM
-                KAM = {
-                    is_subject_of = root
-                }
-                NOT = {
-                    KAM = {
-                        OR = {
-                            vassal_of = root
-                            march_of = root
-                        }
-                    }
-                }
-            }
-            create_march = KAM
-        }
-        else_if = {
-            limit = {
-                KAM = {
-                    OR = {
-                        vassal_of = root
-                        march_of = root
-                    }
-                }
-            }
-            KAM = {
-                add_liberty_desire = -15
-            }
-        }
-        else = {
-            kham_area = {
-                add_nationalism = -10
-            }
-        }
-    }
+	id = ks_ming_event_t.1
+	title = ks_ming_event_t.kang_problem.title
+	desc = ks_ming_event_t.kang_problem.description
+	is_triggered_only = yes
+	option = {
+		name = ks_ming_event_t.kang_problem.option.tight
+		set_country_flag = tight_kang_policy
+		if = {
+			limit = {
+				exists = KAM
+				KAM = {
+					is_subject_of = root
+				}
+				NOT = {
+					KAM = {
+						OR = {
+							vassal_of = root
+							march_of = root
+						}
+					}
+				}
+			}
+			vassalize = KAM
+		}
+		else_if = {
+			limit = {
+				KAM = {
+					OR = {
+						vassal_of = root
+						march_of = root
+					}
+				}
+			}
+			KAM = {
+				add_liberty_desire = 15
+			}
+			add_country_modifier = {
+				name = ks.ming.modifier.tight_kang_policy
+				duration = 7300
+			}
+		}
+		else = {
+			kham_area = {
+				add_base_tax = 1
+			}
+		}
+	}
+	option = {
+		name = ks_ming_event_t.kang_problem.option.loose
+		set_country_flag = loose_kang_policy
+		if = {
+			limit = {
+				exists = KAM
+				KAM = {
+					is_subject_of = root
+				}
+				NOT = {
+					KAM = {
+						OR = {
+							vassal_of = root
+							march_of = root
+						}
+					}
+				}
+			}
+			create_march = KAM
+		}
+		else_if = {
+			limit = {
+				KAM = {
+					OR = {
+						vassal_of = root
+						march_of = root
+					}
+				}
+			}
+			KAM = {
+				add_liberty_desire = -15
+			}
+		}
+		else = {
+			kham_area = {
+				add_nationalism = -10
+			}
+		}
+	}
 }
 
 # Our attitude to Choson
 country_event = {
-    id = ks_ming_event_t.2
-    title = ks_ming_event_t.our_attitude_to_choson.title
-    desc = ks_ming_event_t.our_attitude_to_choson.description
-
-    is_triggered_only = yes
-
-    option = {
-        name = ks_ming_event_t.our_attitude_to_choson.option.vassalize
-
-        KOR = {
-            country_event = {
-                id = ks_ming_event_t.3
-            }
-        }
-    }
-
-    option = {
-        name = ks_ming_event_t.our_attitude_to_choson.option.do_nothing
-
-        if = {
-            limit = {
-                NOT = {
-                    stability = 3
-                }
-            }
-            add_stability = 1
-        }
-        else = {
-            add_adm_power = 100
-        }
-    }
+	id = ks_ming_event_t.2
+	title = ks_ming_event_t.our_attitude_to_choson.title
+	desc = ks_ming_event_t.our_attitude_to_choson.description
+	is_triggered_only = yes
+	option = {
+		name = ks_ming_event_t.our_attitude_to_choson.option.vassalize
+		KOR = {
+			country_event = {
+				id = ks_ming_event_t.3
+			}
+		}
+	}
+	option = {
+		name = ks_ming_event_t.our_attitude_to_choson.option.do_nothing
+		if = {
+			limit = {
+				NOT = {
+					stability = 3
+				}
+			}
+			add_stability = 1
+		}
+		else = {
+			add_adm_power = 100
+		}
+	}
 }
 
 # Required vassal
 country_event = {
-    id = ks_ming_event_t.3
-    title = ks_ming_event_t.required_vassal.title
-    desc = ks_ming_event_t.required_vassal.description
-
-    is_triggered_only = yes
-
-    option = {
-        name = ks_ming_event_t.required_vassal.option.accept
-
-        FROM = {
-            country_event = {
-                id = ks_ming_event_t.4
-            }
-        }
-
-        ai_chance = {
-            factor = 4
-        }
-    }
-
-    option = {
-        name = ks_ming_event_t.required_vassal.option.refuse
-
-        FROM = {
-            country_event = {
-                id = ks_ming_event_t.5
-            }
-        }
-        
-        ai_chance = {
-            factor = 1
-        }
-    }
+	id = ks_ming_event_t.3
+	title = ks_ming_event_t.required_vassal.title
+	desc = ks_ming_event_t.required_vassal.description
+	is_triggered_only = yes
+	option = {
+		name = ks_ming_event_t.required_vassal.option.accept
+		FROM = {
+			country_event = {
+				id = ks_ming_event_t.4
+			}
+		}
+		ai_chance = {
+			factor = 4
+		}
+	}
+	option = {
+		name = ks_ming_event_t.required_vassal.option.refuse
+		FROM = {
+			country_event = {
+				id = ks_ming_event_t.5
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
 }
 
 # Accepted vassal
 country_event = {
-    id = ks_ming_event_t.4
-    title = ks_ming_event_t.accepted_vassal.title
-    desc = ks_ming_event_t.accepted_vassal.description
-
-    is_triggered_only = yes
-
-    option = {
-        name = ks_ming_event_t.accepted_vassal.option.ok
-
-        vassalize = FROM
-    }
+	id = ks_ming_event_t.4
+	title = ks_ming_event_t.accepted_vassal.title
+	desc = ks_ming_event_t.accepted_vassal.description
+	is_triggered_only = yes
+	option = {
+		name = ks_ming_event_t.accepted_vassal.option.ok
+		vassalize = FROM
+	}
 }
 
 # Refused vassal
 country_event = {
-    id = ks_ming_event_t.5
-    title = ks_ming_event_t.refused_vassal.title
-    desc = ks_ming_event_t.refused_vassal.description
-
-    is_triggered_only = yes
-
-    option = {
-        name = ks_ming_event_t.refused_vassal.option.ok
-
-        add_casus_belli = {
-            type = cb_vassalize_mission
-            target = FROM
-            months = 360
-        }
-    }
+	id = ks_ming_event_t.5
+	title = ks_ming_event_t.refused_vassal.title
+	desc = ks_ming_event_t.refused_vassal.description
+	is_triggered_only = yes
+	option = {
+		name = ks_ming_event_t.refused_vassal.option.ok
+		add_casus_belli = {
+			type = cb_vassalize_mission
+			target = FROM
+			months = 360
+		}
+	}
 }
 
 # Rebuild the Nurgan Regional Military Commission
 country_event = {
-    id = ks_ming_event_t.6
-    title = ks_ming_event_t.rebuild_nurgan_commission.title
-    desc = ks_ming_event_t.rebuild_nurgan_commission.description
-
-    is_triggered_only = yes
-
-    option = {
-        name = ks_ming_event_t.rebuild_nurgan_commission.option.rebuild
-        manchuria_region = {
-            limit = {
-                NOT = {
-                    region = liaoning_area
-                }
-            }
-            
-        }
-    }
-
-    option = {
-        name = ks_ming_event_t.rebuild_nurgan_commission.option.direct_control
-    }
+	id = ks_ming_event_t.6
+	title = ks_ming_event_t.rebuild_nurgan_commission.title
+	desc = ks_ming_event_t.rebuild_nurgan_commission.description
+	is_triggered_only = yes
+	option = {
+		name = ks_ming_event_t.rebuild_nurgan_commission.option.rebuild
+		manchuria_region = {
+			limit = {
+				NOT = {
+					area = liaoning_area
+				}
+			}
+		}
+	}
+	option = {
+		name = ks_ming_event_t.rebuild_nurgan_commission.option.direct_control
+	}
 }
