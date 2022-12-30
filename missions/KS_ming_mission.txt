@@ -119,6 +119,18 @@ ks.ming.missions.manchu_affairs = {
 			}
 		}
 	}
+	ks.ming.mission.harmonious_east_world = {
+		position = 4
+		icon = mission_market_place_with_asian_traders
+		required_missions = {
+			ks.ming.mission.nurgan_regional_military_commission
+			ks.ming.mission.our_attitude_to_choson
+		}
+		trigger = {
+		}
+		effect = {
+		}
+	}
 }
 
 ks.ming.missions.far_east_affairs = {
@@ -151,9 +163,7 @@ ks.ming.missions.far_east_affairs = {
 							}
 						}
 						AND = {
-							NOT = {
-								truce_with = root
-							}
+							truce_with = root
 							japan_region = {
 								country_or_non_sovereign_subject_holds = root
 							}
