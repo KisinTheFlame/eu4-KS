@@ -3,4 +3,4 @@ tags={
 	"Alternative History"
 }
 name="eu4-KS"
-supported_version="1.34.4"
+supported_version="1.34.*.*"
