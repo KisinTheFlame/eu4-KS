@@ -293,20 +293,20 @@ ks.ming.missions.southeastern_asia_affairs_and_australia_colonization = {
 			ks.ming.mission.punish_oirat
 		}
 		trigger = {
+			# Guangzhou
 			667 = {
-				# Guangzhou
 				num_of_times_improved = 3
 			}
+			# Quanzhou
 			669 = {
-				# Quanzhou
 				num_of_times_improved = 3
 			}
+			# Ningbo
 			2149 = {
-				# Ningbo
 				num_of_times_improved = 3
 			}
+			# Dinghai
 			4942 = {
-				# Dinghai
 				num_of_times_improved = 3
 			}
 		}
@@ -325,14 +325,15 @@ ks.ming.missions.southeastern_asia_affairs_and_australia_colonization = {
 			}
 		}
 	}
-	ks.ming.mission.reset_old_port_xuanwei_division = {
+	ks.ming.mission.reset_old_port_xuanweisi = {
 		position = 4
 		icon = mission_dominate_home_trade_node
 		required_missions = {
 			ks.ming.mission.reopen_foreign_shipping_bureau
 		}
 		trigger = {
-			owns_core_province = 622			# Palembang
+			# Palembang
+			owns_core_province = 622
 		}
 		effect = {
 		}
@@ -341,7 +342,7 @@ ks.ming.missions.southeastern_asia_affairs_and_australia_colonization = {
 		position = 5
 		icon = mission_junk_boat
 		required_missions = {
-			ks.ming.mission.reset_old_port_xuanwei_division
+			ks.ming.mission.reset_old_port_xuanweisi
 		}
 		trigger = {
 		}

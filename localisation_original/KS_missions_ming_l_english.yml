@@ -16,8 +16,8 @@ l_english:
   ks.ming.mission.navy_of_ming_desc: ""
   ks.ming.mission.reopen_foreign_shipping_bureau_title: "重开市舶司"
   ks.ming.mission.reopen_foreign_shipping_bureau_desc: ""
-  ks.ming.mission.reset_old_port_xuanwei_division_title: "旧港宣慰司"
-  ks.ming.mission.reset_old_port_xuanwei_division_desc: ""
+  ks.ming.mission.reset_old_port_xuanweisi_title: "旧港宣慰司"
+  ks.ming.mission.reset_old_port_xuanweisi_desc: ""
   ks.ming.mission.continue_the_voyage_title: "再下西洋"
   ks.ming.mission.continue_the_voyage_desc: ""
   # ks.ming.missions.conquering_mongolia
